@@ -1,5 +1,17 @@
 <html>
-  <head></head>
+  <head>
+    <style>
+      body{
+        background: <%= if message == 'Too low!' || message == 'Too high!'
+                          'pink'
+                        elsif message == 'Way too low!' || message == 'Way too high!' 
+                          'red'
+                        else
+                          'green'
+                        end %>;
+      }
+    </style>
+  </head>
   <body>
     <p>
     <form>
