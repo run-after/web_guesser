@@ -1,15 +1,13 @@
 require 'sinatra'
 require 'sinatra/reloader'
 enable :sessions
+number = rand(100)
+
 
 get '/' do
-  session[:value] = rand(100)
-  redirect "/45"
+  erb :index, :locals => {:number => number}
 end
 
-get "/:value" do
-  "The secret number is " << session[:value].inspect
-end
 
 
 
