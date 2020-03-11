@@ -2,14 +2,14 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-  SECRET_NUMBER = 15#rand(100)
+  SECRET_NUMBER = rand(100)
   @@turns = 5
 
   get '/' do
     if @@turns < 0
       reload_game
     end
-    
+    cheat = 
     guess = params['guess']
     message = check_guess(guess)
     erb :index, :locals => {:number => SECRET_NUMBER, :message => message}
